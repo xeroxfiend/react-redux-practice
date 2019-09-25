@@ -11,7 +11,7 @@ function Home(props) {
             onChange={(e) => props.updateUsername(e.target.value)}
             placeholder='Username' type="text"/>
             <Link to='/characters'>
-                <button onClick={() => props.getCharacters('https://swapi.co/api/people')}>
+                <button onClick={() => props.getCharacters('https://swapi.co/api/people/')}>
                     Login
                 </button>
             </Link>

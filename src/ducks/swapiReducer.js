@@ -2,7 +2,7 @@ import axios from "axios";
 
 const initialState = {
   loading: false,
-  characters: null
+  characters: {results: []}
 };
 
 const GET_CHARACTERS = "GET_CHARACTERS";
