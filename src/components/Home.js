@@ -1,6 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import {updateUsername} from '../ducks/userReducer'
+import {getCharacters} from '../ducks/swapiReducer'
 import {connect} from 'react-redux'
 
 function Home(props) {
@@ -10,13 +11,12 @@ function Home(props) {
             onChange={(e) => props.updateUsername(e.target.value)}
             placeholder='Username' type="text"/>
             <Link to='/characters'>
-                <button>
+                <button onClick={() => props.getCharacters('https://swapi.co/api/people')}>
                     Login
                 </button>
             </Link>
-            Home!
         </div>
     )
 }
 
-export default connect(null, {updateUsername})(Home)
+export default connect(null, {updateUsername, getCharacters})(Home)

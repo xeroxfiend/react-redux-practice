@@ -9,14 +9,14 @@ function Characters(props) {
         <button>Home</button>
       </Link>
       <p>You're logged in as {props.username}!</p>
-      Characters!
     </div>
   );
 }
 
 const mapStateToProps = globalState => {
-  const {username} = globalState;
-  return {username};
+  const {username} = globalState.userReducer
+  const {characters, loading} = globalState.swapiReducer
+  return {username, characters, loading};
 };
 
 export default connect(mapStateToProps)(Characters);
